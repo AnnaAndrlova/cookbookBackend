@@ -8,6 +8,7 @@ $popisek = $data["popisek"];
 $postup = $data["postup"];
 $ingredience = $data["ingredience"];
 $hlavniObrazek = $data["hlavniObrazek"];
+$autorid = $data["autorid"];
 $con= mysqli_connect("localhost", "root", "","ionic-php-crud") or die("could not connect DB");
 $id = $_GET['id'];
 
@@ -16,7 +17,8 @@ SET `nazev` = '$nazev',
 `popisek` = '$popisek', 
 `postup`= '$postup',
 `ingredience`='$ingredience', 
-`hlavniObrazek`= '$hlavniObrazek'
+`hlavniObrazek`= '$hlavniObrazek',
+`autorid`= '$autorid'
 WHERE `id` = '{$id}'");
 if($q){
     http_response_code(200);

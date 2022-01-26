@@ -14,7 +14,7 @@ $q = mysqli_query($con, "UPDATE `user`
 SET `jmeno` = '$jmeno', 
 `prijmeni` = '$prijmeni', 
 `email`= '$email',
-`heslo`='$heslo', 
+`heslo`='$heslo' 
 WHERE `id` = '{$id}'");
 if($q){
     http_response_code(200);
