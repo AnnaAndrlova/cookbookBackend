@@ -8,7 +8,7 @@ $prijmeni = $data["prijmeni"];
 $email = $data["email"];
 $heslo = $data["heslo"];
 
-$con = mysqli_connect("localhost", "root", "","ionic-php-crud") or die("could not connect DB");
+
 
 
 $q = mysqli_query($con, "INSERT INTO `user` (`jmeno`, `prijmeni`,`email`,`heslo`) 

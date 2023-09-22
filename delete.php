@@ -4,7 +4,6 @@ include "config.php";
 $input = file_get_contents('php://input');
 $message = array();
 $id = $_GET['id'];
-$con = mysqli_connect("localhost", "root", "", "ionic-php-crud") or die("could not connect DB");
 
 $q = mysqli_query($con, "DELETE FROM `recept` WHERE `id` = '{$id}' LIMIT 1");
 if($q){

@@ -1,13 +1,16 @@
 <?php
 include "config.php";
 
-$data = array();
 $id = $_GET['id'];
-$con= mysqli_connect("localhost", "root", "","ionic-php-crud") or die("could not connect DB");
 
-$q = mysqli_query($con, "SELECT * FROM `recept` WHERE `id` = $id LIMIT 1");
-while ($row = mysqli_fetch_object($q)){
-    $data[] = $row;
+$q = mysqli_query($con, "SELECT recept.nazev, recept.id, recept.hlavniObrazek, recept.kategorie, recept.obtiznost, recept.postup, recept.ingredience, recept.autorid, recept.popisek, receptcathegory.name FROM recept INNER JOIN receptcathegory ON receptcathegory.idcathegory=recept.kategorie WHERE recept.id = $id;");
+
+$data = $q->fetch_object();
+
+if($data != null){
+    echo json_encode([$data], JSON_UNESCAPED_UNICODE);
+}else{
+    echo json_encode([]);
 }
-echo json_encode($data);
-echo mysqli_error($con);
+
+// echo mysqli_error($con);

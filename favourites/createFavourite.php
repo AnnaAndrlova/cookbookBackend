@@ -5,7 +5,6 @@ $data = json_decode($input, true);
 $message = array();
 $idrecept = $data["idrecept"];
 $iduser = $data["iduser"];
-$con = mysqli_connect("localhost", "root", "","ionic-php-crud") or die("could not connect DB");
 
 
 $q = mysqli_query($con, "INSERT INTO `oblibene_recepty` (`idrecept`, `iduser`) 

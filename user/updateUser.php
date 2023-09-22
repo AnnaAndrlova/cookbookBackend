@@ -7,7 +7,6 @@ $jmeno = $data["jmeno"];
 $prijmeni = $data["prijmeni"];
 $email = $data["email"];
 $heslo = $data["heslo"];
-$con= mysqli_connect("localhost", "root", "","ionic-php-crud") or die("could not connect DB");
 $id = $_GET['id'];
 
 $q = mysqli_query($con, "UPDATE `user` 

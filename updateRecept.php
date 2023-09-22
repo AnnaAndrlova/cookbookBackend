@@ -7,9 +7,9 @@ $nazev = $data["nazev"];
 $popisek = $data["popisek"];
 $postup = $data["postup"];
 $ingredience = $data["ingredience"];
-$hlavniObrazek = $data["hlavniObrazek"];
 $autorid = $data["autorid"];
-$con= mysqli_connect("localhost", "root", "","ionic-php-crud") or die("could not connect DB");
+$kategorie = $data["kategorie"];
+$obtiznost = $data["obtiznost"];
 $id = $_GET['id'];
 
 $q = mysqli_query($con, "UPDATE `recept` 
@@ -17,8 +17,9 @@ SET `nazev` = '$nazev',
 `popisek` = '$popisek', 
 `postup`= '$postup',
 `ingredience`='$ingredience', 
-`hlavniObrazek`= '$hlavniObrazek',
-`autorid`= '$autorid'
+`autorid`= '$autorid',
+`kategorie`= '$kategorie',
+`obtiznost`= '$obtiznost'
 WHERE `id` = '{$id}'");
 if($q){
     http_response_code(200);

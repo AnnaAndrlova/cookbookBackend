@@ -1,10 +1,8 @@
 <?php
 include "configUser.php";
 $data = array();
-$id = $_GET['id'];
 
-
-$q = mysqli_query($con, "SELECT * FROM `user` WHERE `id` = $id LIMIT 1");
+$q = mysqli_query($con, "SELECT email FROM user");
 while ($row = mysqli_fetch_object($q)){
     $data[] = $row;
 }
